@@ -11,15 +11,21 @@ const char PASS[]               = SECRET_OPTIONAL_PASS;    // Network password (
 const char DEVICE_KEY[]  = SECRET_DEVICE_KEY;    // Secret device password
 
 
+int consumption;
 int light;
+bool dim_on;
 bool presence;
+bool strong_on;
 
 void initProperties(){
 
   ArduinoCloud.setBoardId(DEVICE_LOGIN_NAME);
   ArduinoCloud.setSecretDeviceKey(DEVICE_KEY);
-  ArduinoCloud.addProperty(light, READ, ON_CHANGE, NULL, 4096);
-  ArduinoCloud.addProperty(presence, READ, ON_CHANGE, NULL);
+  ArduinoCloud.addProperty(consumption, READ, 1 * SECONDS, NULL);
+  ArduinoCloud.addProperty(light, READ, 1 * SECONDS, NULL);
+  ArduinoCloud.addProperty(dim_on, READ, ON_CHANGE, NULL);
+  ArduinoCloud.addProperty(presence, READ, 2 * SECONDS, NULL);
+  ArduinoCloud.addProperty(strong_on, READ, ON_CHANGE, NULL);
 
 }
 
