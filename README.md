@@ -72,7 +72,7 @@ Esse valor é enviado ao dashboard do Arduino Cloud para monitoramento.
 
 ### 1. Clonar o projeto
 ```bash
-git clone <seu-repositorio>
+git clone https://github.com/VictorAGuerra/IoT-MQTT-Light-System.git
 ```
 
 É necessário atualizar o arquivo "arduino_secrets.h" com a informação do WiFi que será utilizado, assim como o ID do Thing utilizado para que o código consiga se conectar com o Arduino Cloud.
